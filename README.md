@@ -69,7 +69,7 @@ ___ Screenshots
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/Athul-PD/Real-spotify-clone.git
+   https://github.com/Athul-PD/Real-spotify-clone.git
    ```
 2. **Open `main.html` in your browser.**
 3. **Enjoy the app!**
@@ -88,7 +88,7 @@ ___ Screenshots
 
 ## ✨ Credits
 
-- **Developed by:** [ Athul PD ](https://www.linkedin.com/in/YOUR-LINKEDIN/)
+- **Developed by:** [ Athul PD ](https://www.linkedin.com/in/athul-p-d-a5649132b/)
 - **Inspired by:** Spotify UI/UX
 
 ---
@@ -102,5 +102,6 @@ This project is for educational and portfolio purposes only.
 ## 📬 Contact
 
 Want to connect or collaborate?  
-Find me on [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN/) or [GitHub](https://github.com/Athul-PD).
+Find me on [LinkedIn](https://www.linkedin.com/in/athul-p-d-a5649132b/) or [GitHub](https://github.com/Athul-PD).
+
 
