@@ -69,7 +69,7 @@ ___ Screenshots
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/YOUR-USERNAME/real-spotify-clone.git
+   git clone https://github.com/Athul-PD/Real-spotify-clone.git
    ```
 2. **Open `main.html` in your browser.**
 3. **Enjoy the app!**
@@ -102,4 +102,5 @@ This project is for educational and portfolio purposes only.
 ## 📬 Contact
 
 Want to connect or collaborate?  
-Find me on [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN/) or [GitHub](https://github.com/YOUR-USERNAME).
+Find me on [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN/) or [GitHub](https://github.com/Athul-PD).
+
