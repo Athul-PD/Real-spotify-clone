@@ -16,3 +16,23 @@ A modern, responsive Spotify-inspired music web app built with HTML, CSS, and Ja
 - **Follow/Unfollow Artists:** Toggle follow state with accessibility support.
 
 ---
+
+## 📸 Screenshots
+
+### Home page
+![Home screenshot](./Screenshots/home.png)
+
+### Liked Folder / Content Page
+![Liked Songs Screenshot](./Screenshots/folder.png)
+
+### Search Functionality
+![Search Screenshot](./Screenshots/filter.png)
+---
+## 🛠️ Tech Stack
+
+- **HTML5**
+- **CSS3** (Grid, Flexbox, Variables, Media Queries)
+- **JavaScript (ES6+)**
+- **LocalStorage** for playlist persistence
+
+---
