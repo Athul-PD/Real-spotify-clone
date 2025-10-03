@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    
+    <link rel="stylesheet" href="style/normalise.css">
+    <link rel="stylesheet" href="style/mainpage/leftsection.css">
+    <link rel="stylesheet" href="style/mainpage/main.css">
+    <link rel="stylesheet" href="style/mainpage/rightsection.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="./scripts/sidebar.js" defer></script>
+    <script type="module" src="main.js" defer></script>
+    <script type="module" src="./scripts/folder.js"></script>
+    <script type="module" src="scripts/slider-cards.js"></script>
+</head>
+<body>
+    <header class="header df" role="banner">
+        <!-- left section of header -->
+        <div class="header__left df" aria-label="main navigation">
+            <button aria-label="Settings" class="header__settings">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            </button>
+            <button aria-label="Go back" class="header__go_back p_relative">
+                <svg class="gobackColor" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            <ul class="dropdown" role="menu">
+                <li role="menuitem">Go back</li>
+            </ul>
+            </button>
+            <button aria-label="next button" class="header__go_forward p_relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            <ul class="dropdown" role="menu">
+                <li role="menuitem">Go forward</li>
+            </ul>
+            </button>
+        </div>
+        <!-- main section of header -->
+        <div class="header__center df" role="search">
+            <a class="header__home p_relative" href="main.html" aria-label="go home page">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+                <ul class="dropdown" role="menu">
+                    <li role="menuitem">Home</li>
+                </ul>
+            </a>
+
+            <div class="header_search_input_container df">
+
+                <svg class="header__search_svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+
+                <input 
+                type="text"
+                placeholder="What do you want to play?"
+                class="search-bar p_relative"
+                id="search_bar"
+                aria-label="Search"
+                autocomplete="off">
+                
+                <div class="input_popup">
+                    <h2 class="df">What do you want to listen to?</h2>
+                    <div class="search_lists">
+
+                    </div>
+                </div>
+
+                <div class="slash_design_symbol" aria-hidden="true"></div>
+
+                <a class="header_browser p_relative df" href="main.html" aria-label="Browse Music">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
+                </svg>
+                <ul class="dropdown" role="menu">
+                    <li role="menuitem">Browse</li>
+                </ul>
+            </a>
+            </div>
+        </div>
+        <!-- right section of header -->
+        <div class="header__right df" aria-label="User menu">
+            <button>Explore Premium</button>
+            <ul class="df">
+                <li class="header_bell_icon p_relative" aria-label="what's new">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                    </svg>
+                    <ul class="dropdown" role="menu">
+                        <li role="menuitem">What's new</li>
+                    </ul>
+                </li>
+                <li class="header_friend-activity_icon p_relative" aria-label="Friend Activity">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                    </svg>
+                    <ul class="dropdown" role="menu">
+                        <li role="menuitem">Friend Activity</li>
+                    </ul>
+                </li>
+                <li class="header_user" aria-label="user profile">A</li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="main__left_section">
+            <div aria-label="library" class="main_left_section_library_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+                </svg>
+            </div>
+            <div aria-label="add files-folders" class="main_left_section_add_icon df">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </div>
+            <div aria-label="liked sogs folder" class="main_left_section_liked_songs df hover_bgc">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+            </div>
+        </section>
+
+        <section class="main-center_section">
+            <section class="main_page">
+                <div class="main_page_section_buttons" role="tablist" aria-label="Content filter">
+                    <button role="tab" aria-selected="true" tabindex="0">All</button>
+                    <button role="tab" aria-selected="false" tabindex="-1">Music</button>
+                    <button role="tab" aria-selected="false" tabindex="-1">Podcasts</button>
+                </div>
+                <div class="main_page_section_folders">
+
+                </div>
+                <div class="main_section_user_name_display">
+                    <h1>Picked for you</h1>
+                </div>
+
+                <div class="main_section_carousels" role="region" aria-label="Picked Songs Carousel">
+                    <button class="previousBtn button" aria-label="Previous slide" aria-controls="CarouselTrack">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer1.webp" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer7.jpg" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer2.webp" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer3.jpg" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer4.webp" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer5.jpeg" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer6.webp" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/singer8.jpg" alt="Album: Finest Collection">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">&gt;</button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>jump back in</h1>
+                </div>
+
+                <div class="main_section_carousels_2" role="region" aria-label="Jump back Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-1.webp" alt="Premalu songs">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-2.webp" alt="Premasuthra movie songs">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-3.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-4.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-5.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-6.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-7.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-8.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nextBtn button">></button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>Recently Played</h1>
+                </div>
+
+                <div class="main_section_carousels_3" role="region" aria-label="Recently played Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/trending malayalam.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/paniBGM.avif" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/dj bounty hunter.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/dj mix.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/villian themes.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/top hindi dj.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/folders-bg-images/manikkam.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">&gt;</button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>More of what you Like</h1>
+                </div>
+
+                <div class="main_section_carousels_4" role="region" aria-label="More what you like Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-1.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-2.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-3.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-4.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-5.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-6.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-7.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/chill-8.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">&gt;</button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>Recommended for today</h1>
+                </div>
+
+                <div class="main_section_carousels_5" role="region" aria-label="Today Recommended Song Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-1-1.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-2-2.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-3-3.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-4.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-5.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-6.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-7.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-8.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">&gt;</button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>Your top mixes</h1>
+                </div>
+
+                <div class="main_section_carousels_6" role="region" aria-label="Top Mixes Song Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp4-1.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-2.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-3.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-4.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-5.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-6.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-7.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-8.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">&gt;</button>
+                </div>
+
+                <div class="main_section_user_name_display">
+                    <h1>Charts</h1>
+                </div>
+
+                <div class="main_section_carousels_7" role="region" aria-label="Charts Song Carousel">
+                    <button aria-label="Previous Slide" class="previousBtn button">&lt;</button>
+                    <div class="carousel_track">
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/2025 dj.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/hindi dj.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/wp-4-7.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/mollywood.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/pani.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/MM.webp" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/jb-4.jpg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="caruosel_img">
+                                <img src="./Assets/images/carousel images/random-7.jpeg" alt="">
+                                <button class="carousel_button" aria-label="play music">
+                                    <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel_text">
+                                <p>Finest collectrion ajd qjhdq qjhd qduhwd qwliud qdkjudqw wqj</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button aria-label="Next Slide" class="nextBtn button">></button>
+                </div>
+
+                <article class="main_section_card_preview">
+                    <div class="cards">
+                        <video aria-hidden="true" class="card_bg_video" loop muted src="./Assets/preview cards img&audio/video_2025-09-21_22-19-23.mp4"></video>
+                        <div class="cards_img_name">
+                            <img src="./Assets/preview cards img&audio/peelings.webp" alt="Album cover for Laxmi Dasa">
+                            <div class="cards_name">
+                                <h2>Laxmi Dasa</h2>
+                                <p>playlist &bull; Spotify</p>
+                            </div>
+                        </div>
+                        <div class="cards_video_preview">
+                            <button class="preview_btn" aria-label="Preview Laxmi Dasa Playlist" aria-pressed="false">
+                                <span class="sound_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                                </span>
+                                <span>Preview</span>
+                            </button>
+                            <div class="cards_video_play_buttons">
+                                <ul>
+                                    <li aria-label="More options">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Add to playlist">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Play">
+                                        <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <video aria-hidden="true" class="card_bg_video" loop muted src="./Assets/preview cards img&audio/monica.mp4"></video>
+                        <div class="cards_img_name">
+                            <img src="./Assets/preview cards img&audio/monica.avif" alt="Album cover Sublahshini & Anirudh">
+                            <div class="cards_name">
+                                <h2>Sublahshini & Anirudh</h2>
+                                <p>playlist &bull; Spotify</p>
+                            </div>
+                        </div>
+                        <div class="cards_video_preview">
+                            <button class="preview_btn" aria-label="Sublahshini & Anirudh playlist" aria-pressed="false">
+                                <span class="sound_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                                </span>
+                                <span>Preview</span>
+                            </button>
+                            <div class="cards_video_play_buttons">
+                                <ul>
+                                    <li aria-label="More options">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Add to playlist">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Play">
+                                        <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <video aria-hidden="true" class="card_bg_video" loop muted src="./Assets/preview cards img&audio/unnai kaanathu.mp4"></video>
+                        <div class="cards_img_name">
+                            <img src="./Assets/preview cards img&audio/unnai kanathu.jpg" alt="Album cover for Shankar-Ehsaan-loy">
+                            <div class="cards_name">
+                                <h2>Shankar-Ehsaan-loy</h2>
+                                <p>playlist &bull; Spotify</p>
+                            </div>
+                        </div>
+                        <div class="cards_video_preview">
+                            <button class="preview_btn" aria-label="Album cover for Shankar-Ehsaan-loy" aria-pressed="false">
+                                <span class="sound_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                                </span>
+                                <span>Preview</span>
+                            </button>
+                            <div class="cards_video_play_buttons">
+                                <ul>
+                                    <li aria-label="More">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Add to playlist">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Play">
+                                        <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <video aria-hidden="true" class="card_bg_video" loop muted src="./Assets/preview cards img&audio/thumba poovum.mp4"></video>
+                        <div class="cards_img_name">
+                            <img src="./Assets/preview cards img&audio/thumba poovum.jpg" alt="singer">
+                            <div class="cards_name">
+                                <h2>Jisma& Vimal</h2>
+                                <p>playlist &bull; Spotify</p>
+                            </div>
+                        </div>
+                        <div class="cards_video_preview">
+                            <button aria-label="preview Jisma and Vimala" aria-pressed="false" class="preview_btn">
+                                <span class="sound_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                                </span>
+                                <span>Preview</span>
+                            </button>
+                            <div class="cards_video_play_buttons">
+                                <ul>
+                                    <li aria-label="More options">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Add to playlist">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Play">
+                                        <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <video aria-hidden="true" class="card_bg_video" loop muted src="./Assets/preview cards img&audio/vedan.mp4"></video>
+                        <div class="cards_img_name">
+                            <img src="./Assets/preview cards img&audio/vedan.webp" alt="Vedan top Mix">
+                            <div class="cards_name">
+                                <h2>Vedan top Mix</h2>
+                                <p>playlist &bull; Spotify</p>
+                            </div>
+                        </div>
+                        <div class="cards_video_preview">
+                            <button aria-label="Vedan top Mix Songs" aria-pressed="false" class="preview_btn">
+                                <span class="sound_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                                </svg>
+                                </span>
+                                <span>Preview</span>
+                            </button>
+                            <div class="cards_video_play_buttons">
+                                <ul>
+                                    <li aria-label="More options">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Add to playlist">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </li>
+                                    <li aria-label="Play">
+                                        <svg class="df" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section class="main_folder_section">
+            <button class="go_back" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            </button>
+            <div class="hero_section df">
+                <div class="hero_section_image">
+                    <img class="folder_image" src="./Assets/images/folders-bg-images/paniBGM.avif" alt="iamge">
+                </div>
+                <div class="hero_section_texts">
+                    <p>Public Playlist</p>
+                    <h1 class="folder_name">Night Kuthu Vibes</h1>
+                    <p>playlist &bullet; spotify</p>
+                    <p class="folder_song_length"><span class="folder_composer">Composer &bull;</span>songlength</p>
+                </div>
+            </div>
+
+            <div class="hero_section_button_activities df">
+                <ul class="button_activities_left_section">
+                    <li class="playMusic df">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                        </svg>
+                    </li>
+                    <li class="shuffle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle-icon lucide-shuffle"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"/></svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                    </li>
+                </ul>
+                <ul class="button_activities_right_section">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </li>
+                    <li class="customorder">
+                        Custome order
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="table_header_section">
+                <div class="table_header">
+                    <div class="grid-1">#</div>
+                    <div class="grid-2">Title</div>
+                    <div class="grid-3">Album</div>
+                    <div class="grid-4">Date added</div>
+                </div>
+                <ul class="table_body">
+
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="main_right_section" aria-labelledby="current song title">
+            <div class="right_section_current_song_details">
+                <div class="top_header_details">
+                    <div class="top_header_details_name">
+                        <h2 class="currentSong">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+                    </div>
+                    <div class="top_header_details_icons">
+                        <button type="button" aria-label="More options">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg>
+                        </button>
+                        <button type="button" aria-label="Expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="current_song_image">
+                    <img class="currentSongImage" src="./Assets/images/carousel images/wp-4-8.jpeg" alt="image">
+                </div>
+                <div class="current_song_texts">
+                    <h3 class="currentSong">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                    <p class="currentSongArtists">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, aperiam?</p>
+                </div>
+
+                <div class="current_song_artists">
+                    <div class="current_song_artists_heads">
+                        <h4>Credits</h4>
+                        <p>Show all</p>
+                    </div>
+                    <div class="current_song_artists_names">
+                        <div class="artists_name">
+                            <p class="currentSongArtists">Vidyasagar</p>
+                            <span>Main Artist,composer</span>
+                        </div>
+                        <button aria-pressed="true" class="followBtn">Unfollow</button>
+                    </div>
+                    <div class="current_song_artists_names">
+                        <div class="artists_name">
+                            <p class="currentSongComposer">Vidyasagar</p>
+                            <span>Main Artist</span>
+                        </div>
+                        <button aria-pressed="false" class="followBtn">Follow</button>
+                    </div>
+                    <div class="current_song_artists_names">
+                        <div class="artists_name">
+                            <p class="currentSong">Vidyasagar</p>
+                            <span>Song</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next_in_queue">
+                    <div class="queue_head">
+                        <p>Next in queue</p>
+                        <span>Open queue</span>
+                    </div>
+                    <div class="queue_img_name">
+                        <img class="queueImage" src="./Assets/images/folders-bg-images/paniBGM.avif" alt="image">
+                        <div class="queue_name">
+                            <p class="queueSongName">Thaai Manam</p>
+                            <span class="queueSongArtists">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, ab.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_desktop">
+            <div class="footer_desktop_left_section">
+                <img class="currentSongImage" src="./Assets/images/sidebar-images/img-3.webp" alt="image">
+                <div aria-label="current playing song name & artists" class="left_section_song_name">
+                    <p class="currentSong">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, perferendis?</p>
+                    <span class="currentSongArtists">Lorem ipsum dolor sit amet consectetur.</span>
+                </div>
+                <div class="add_playlist">
+                    <span aria-label="remove this song from spotify">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                    </span>
+                    <span id="addToPlaylistButton" aria-label="add songs to favourites">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="footer_desktop_middle_section">
+                <div class="middle_section_first_row" role="group">
+                    <span aria-label="shuffle the songs" class="color_shade">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle-icon lucide-shuffle"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"/></svg>
+                    </span>
+                    <span id="previousButton" aria-label="previous songs button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-back-icon lucide-skip-back"><path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z"/><path d="M3 20V4"/></svg>
+                    </span>
+                    <span aria-label="play and pause song button" class="play_btn">
+
+                        <svg class="pauseBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                        </svg>
+
+                        <svg class="playBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                        </svg>
+
+                    </span>
+                    <span id="nextButton" aria-label="next songs button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-forward-icon lucide-skip-forward"><path d="M21 4v16"/><path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"/></svg>
+                    </span>
+                    <span aria-label="Enable repeat" class="color_shade">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                        </svg>
+                    </span>
+                </div>
+                <div role="group" aria-label="Media progress" class="middle_section_second_row">
+                    <span class="songCurrentTime">0:00</span>
+                    <input id="song_progresss_bar" type="range" value="0" min="0" max="100">
+                    <span class="songtotalDuration">0:00</span>
+                </div>
+            </div>
+
+            <div class="footer_desktop_right_section" role="toolbar" aria-label="Media">
+                <button aria-label="Play">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-play-icon lucide-square-play"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/></svg>
+                </button>
+                <button aria-label="Mic">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic-vocal-icon lucide-mic-vocal"><path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12"/><path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5"/><circle cx="16" cy="7" r="5"/></svg>
+                </button>
+                <button aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+                </button>
+                <button aria-label="Devices">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tablet-smartphone-icon lucide-tablet-smartphone"><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4"/><path d="M8 18h.01"/></svg>
+                </button>
+                <button aria-label="sound">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume2-icon lucide-volume-2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+                </button>
+                <label for="volumeRange" class="sr-only">Volume</label>
+                <input id="volumeRange" type="range" min="0" max="100" value="100" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+                <button aria-label="Airplay">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>
+                </button>
+                <button aria-label="Maximize">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize-icon lucide-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- audi tag -->
+     <audio id="audio" src=""></audio>
+</body>
+</html>
+
+

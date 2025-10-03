@@ -1,0 +1,233 @@
+[
+  {
+    "id": 101001,
+    "image": "./Assets/images/folders-bg-images/newheart.jpg",
+    "foldername": "Liked songs",
+    "songs": []
+  },
+  {
+    "id": 1,
+    "image": "./Assets/images/folders-bg-images/paniBGM.avif",
+    "foldername": "Pani bgm",
+    "songs": [
+      {
+        "id": 101,
+        "songName": "Pani Motion Poster Theme",
+        "audio": "./Assets/audios/pani bgm/Pani_Motion_Poster_Theme__From__Pani__(128k).mp3",
+        "songImg": "./Assets/audios/pani bgm/pani motion poster theme.jpg",
+        "artist": "Vishnu Vijay",
+        "composer": "Vishnu Vijay"
+      },
+      {
+        "id": 99,
+        "songName": "Pani - The Conclusion",
+        "audio": "./Assets/audios/pani bgm/Pani_-_The_Conclusion(128k).mp3",
+        "songImg": "./Assets/audios/pani bgm/pani conclusion.jpg",
+        "artist": "Sam C.S.",
+        "composer": "Vishnu Vijay"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "./Assets/images/folders-bg-images/manikkam.jpeg",
+    "foldername": "Manikka Vinayagam",
+    "songs": [
+      {
+        "id": 102,
+        "songName": "Arjunar Villu",
+        "audio": "./Assets/audios/manikkaym vinayakam hits/Arjunar_Villu_Video_Song_Ghilli_Thalapathy_Vijay_Trisha_Vidyasagar.mp3",
+        "songImg": "./Assets/audios/manikkaym vinayakam hits/arjunar villu.jpg",
+        "artist": "Kabilan,Sukhwinder Singh",
+        "composer": "Manikka Vinayagam"
+      },
+      {
+        "id": 103,
+        "songName": "Kannukulle",
+        "audio": "./Assets/audios/manikkaym vinayakam hits/கண்ணுக்குள்ள_கெளுத்தி_Kannukulley_Keluthi_HD_Video_Song_Dhill_Vikram.mp3",
+        "songImg": "./Assets/audios/manikkaym vinayakam hits/kanukulley.jpg",
+        "artist": "Vidyasagar,Manikka Vinayagam",
+        "composer": "Manikka Vinayagam"
+      },
+      {
+        "id": 104,
+        "songName": "Aruva Meesai",
+        "audio": "./Assets/audios/manikkaym vinayakam hits/Koduva_Meesai_Aruva_Dhool_Tamil_Movie_Video_Song_4K_Ultra_HD_Blu.mp3",
+        "songImg": "./Assets/audios/manikkaym vinayakam hits/aruvai meesai.jpg",
+        "artist": "Manikka Vinayagam,Vithu Prabakar",
+        "composer": "Manikka Vinayagam"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "./Assets/images/folders-bg-images/dj bounty hunter.webp",
+    "foldername": "DJ Bountary hunter",
+    "songs": [
+      {
+        "id": 105,
+        "songName": "Woops",
+        "audio": "./Assets/audios/DJ Bountaryhunter/BOUNTYHUNTER_-_WOOPS__TECHNO_(128k).mp3",
+        "songImg": "./Assets/audios/DJ Bountaryhunter/djb1.jpg",
+        "artist": "Dj Bountyhunter",
+        "composer": "Dj Bountyhunter"
+      },
+      {
+        "id": 106,
+        "songName": "Woops-Dimitri Vegas & Junkie kid Remix",
+        "audio": "./Assets/audios/DJ Bountaryhunter/DJ_Bountyhunter_Woops_Dimitri_Vegas_Junkie_Kid_Remix_128k.mp3",
+        "songImg": "./Assets/audios/DJ Bountaryhunter/djb2.jpg",
+        "artist": "Dimitri Vegas & Junkie kid",
+        "composer": "Dimitri Vegas"
+      },
+      {
+        "id": 107,
+        "songName": "Nasty Best Part Slowed Loop",
+        "audio": "./Assets/audios/DJ Bountaryhunter/𝐍𝐀𝐒𝐓𝐘_𝐈𝐌𝐏𝐗𝐓𝐑_𝐁𝐄𝐒𝐓_𝐏𝐀𝐑𝐓_𝐒𝐋𝐎𝐖𝐄𝐃_𝐋𝐎𝐎𝐏_128k.mp3",
+        "songImg": "./Assets/audios/DJ Bountaryhunter/djb3.webp",
+        "artist": "Dj Bountyhunter",
+        "composer": "Dj Bountyhunter"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "./Assets/images/folders-bg-images/villian themes.jpeg",
+    "foldername": "Villan Themes/BGM",
+    "songs": [
+      {
+        "id": 1113,
+        "songName": "Marco_x_Lokiverse_Vikram_Marco_Rolex_Suriya_Unnimukundan",
+        "audio": "./Assets/audios/villian Themes/Marco_x_Lokiverse_Vikram_Marco_Rolex_Suriya_Unnimukundan128k.mp3",
+        "songImg": "./Assets/audios/villian Themes/rolex-1.webp",
+        "artist": "Anuridh Ravichander",
+        "composer": "Anuridh Ravichander"
+      },
+      {
+        "id": 1112,
+        "songName": "Rolex_Entry_Bgm_Rolex_Entry_Full_Bgm_Lokiverse_Bgm",
+        "audio": "./Assets/audios/villian Themes/Rolex_Entry_Bgm_Rolex_Entry_Full_Bgm_Lokiverse_Bgm_@HITECHBGM_@Mr.mp3",
+        "songImg": "./Assets/audios/villian Themes/rolex-2.jpg",
+        "artist": "Anuridh Ravichander",
+        "composer": "Anuridh Ravichander"
+      },
+      {
+        "id": 1111,
+        "songName": "Rolex_Theme__Background_Score",
+        "audio": "./Assets/audios/villian Themes/Rolex_Theme__Background_Score_(128k).mp3",
+        "songImg": "./Assets/audios/villian Themes/rolex-3.jpg",
+        "artist": "Anuridh Ravichander",
+        "composer": "Anuridh Ravichander"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "./Assets/images/folders-bg-images/dj mix.jpeg",
+    "foldername": "DJ Music 2025 Best DJ Mix,classics",
+    "songs": [
+      {
+        "id": 108,
+        "songName": "2k25_NEW_DJ_MIX_SONG",
+        "audio": "./Assets/audios/best DJ Mix/2k25_NEW_DJ_MIX_SONG__💃💃🎶🎶(128k).mp3",
+        "songImg": "./Assets/audios/best DJ Mix/dj1.jpeg",
+        "artist": "Pawan_Singh_Bhakti",
+        "composer": "Pawan_Singh_Bhakti"
+      },
+      {
+        "id": 109,
+        "songName": "Julus_Mein_Jhum_Jhum_Ke_Dj_Remix_Song_Pawan_Singh_Bhakti",
+        "audio": "./Assets/audios/best DJ Mix/Julus_Mein_Jhum_Jhum_Ke_Dj_Remix_Song_Pawan_Singh_Bhakti_Song_2025.mp3",
+        "songImg": "./Assets/audios/best DJ Mix/dj2.webp",
+        "artist": "Pawan_Singh_Bhakti",
+        "composer": "Pawan_Singh_Bhakti"
+      },
+      {
+        "id": 110,
+        "songName": "Wang_Da_Naap_Dj_Remix_Hard_Bass_Ammy_Virk_Vibration",
+        "audio": "./Assets/audios/best DJ Mix/Wang_Da_Naap_Dj_Remix_Hard_Bass_Ammy_Virk_Vibration_Mix_Dj_Parveen.mp3",
+        "songImg": "./Assets/audios/best DJ Mix/dj3.webp",
+        "artist": "Wang_Da_Naap,Dj_Parveen",
+        "composer": "Dj_Parveen"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "./Assets/images/folders-bg-images/top hindi dj.jpg",
+    "foldername": "Top Hindi DJ party Songs",
+    "songs": [
+      {
+        "id": 111,
+        "songName": "Haule Haule",
+        "audio": "./Assets/audios/Top hindi DJ party/Haule_Haule.mp3",
+        "songImg": "./Assets/audios/Top hindi DJ party/haule.webp",
+        "artist": "Salim-Sulaiman, Sukhwinder Singh, Jaideep Sahni",
+        "composer": "Salim-Sulaiman"
+      },
+      {
+        "id": 112,
+        "songName": "LEO_Badass_Lyrics",
+        "audio": "./Assets/audios/Top hindi DJ party/leo.mp3",
+        "songImg": "./Assets/audios/Top hindi DJ party/leo.webp",
+        "artist": "Thalapathy Vijay, Lokesh Kanagaraj, Anirudh Ravichander",
+        "composer": "Anirudh Ravichander"
+      },
+      {
+        "id": 113,
+        "songName": "Monica",
+        "audio": "./Assets/audios/Top hindi DJ party/Monica.mp3",
+        "songImg": "./Assets/audios/Top hindi DJ party/monica.avif",
+        "artist": "Anirudh Ravichander, Sublahshini, Asal Kolaar, Vishnu Edavan",
+        "composer": "Anirudh Ravichander"
+      },
+      {
+        "id": 114,
+        "songName": "Peelings",
+        "audio": "./Assets/audios/Top hindi DJ party/Peelings.mp3",
+        "songImg": "./Assets/audios/Top hindi DJ party/peelings.jpg",
+        "artist": "Shankarr Babu Kandukoori, Laxmi Dasa, Devi Sri Prasad, Chandra Bose",
+        "composer": "Devi Sri Prasad"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "./Assets/images/folders-bg-images/trending malayalam.jpg",
+    "foldername": "Trending Now Malayalam",
+    "songs": [
+      {
+        "id": 115,
+        "songName": "Nettimele",
+        "audio": "./Assets/audios/Trending malayalam/Nettimele_Pottittaalum.mp3",
+        "songImg": "./Assets/audios/Trending malayalam/netimele.jpg",
+        "artist": "Mohan Sithara, K.J. Yesudas, K.S. Chithra",
+        "composer": "Mohan Sithara"
+      },
+      {
+        "id": 116,
+        "songName": "Marikolunthu",
+        "audio": "./Assets/audios/Trending malayalam/Marikolunthu.mp3",
+        "songImg": "./Assets/audios/Trending malayalam/maarikolanthu.webp",
+        "artist": "Kalabhavan Mani, M Jayachandran",
+        "composer": "Kalabhavan Mani"
+      },
+      {
+        "id": 117,
+        "songName": "Starboy_X_Prayam_Nammil",
+        "audio": "./Assets/audios/Trending malayalam/Starboy_X_Prayam_Nammil.mp3",
+        "songImg": "./Assets/audios/Trending malayalam/prayam_namme.jpg",
+        "artist": "Prakash Mathew From Niram, Untold Story",
+        "composer": "Abel Tesfaye,Guy-Manuel de Homem-Christo"
+      },
+      {
+        "id": 118,
+        "songName": "Nenjileri Theeye",
+        "audio": "./Assets/audios/Trending malayalam/Ramaleela.mp3",
+        "songImg": "./Assets/audios/Trending malayalam/ramaleela.webp",
+        "artist": "Dileep Arun, Gopy, Mulakkuppadam Films",
+        "composer": "Dileep Arun"
+      }
+    ]
+  }
+]

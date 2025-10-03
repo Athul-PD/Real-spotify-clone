@@ -1,0 +1,235 @@
+
+.footer_desktop{
+    width: 100%;
+    height: 14vh;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    padding: 8px;
+    background-color: var(--bg-page);
+    display: grid;
+    grid-area: desktop;
+    grid-template-columns: auto 1fr 350px;
+    grid-template-areas: 
+    "left middle right";
+}
+.footer_desktop_left_section{
+    grid-area: left;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.footer_desktop_left_section img{
+    width: 70px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+    display: block;
+}
+.left_section_song_name{
+    display: flex;
+    flex-direction: column;
+}
+.left_section_song_name p,
+.left_section_song_name span{
+    width: clamp(120px,10vw,170px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 0.85rem;
+}
+.left_section_song_name span{
+    font-size: 0.7rem;
+    color: var(--icons-color);
+}
+.add_playlist{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.add_playlist span{
+    border: 1px solid white;
+    padding: 2px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add_playlist svg{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+.footer_desktop_middle_section{
+    grid-area: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.middle_section_first_row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+}
+.middle_section_first_row svg{
+    width: 18px;
+    cursor: pointer;
+}
+.play_btn{
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3px 8px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+.play_btn svg{
+    width: 20px;
+    color: black;
+    fill: black;
+    cursor: pointer;
+}
+.color_shade{
+    color: var(--icons-color);
+}
+.middle_section_second_row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: clamp(250px,40vw,600px);
+}
+.middle_section_second_row span{
+    font-size: 0.75rem;
+    color: var(--icons-color);
+}
+.middle_section_second_row input{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3.5px;
+    border-radius: 5px;
+    background: linear-gradient(to right,white 0%, #555454ff 0%);
+    outline: none;
+    cursor: pointer;
+}
+.middle_section_second_row input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.middle_section_second_row button{
+    font-size: 0.8rem;
+    color: var(--icons-color);
+}
+.footer_desktop_right_section{
+    grid-area: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer_desktop_right_section input{
+    height: 4px;
+    cursor: pointer;
+}
+.footer_desktop_right_section button{
+    background: transparent;
+    border: none;
+}
+.footer_desktop_right_section button svg{
+    width: 18px;
+    color: var(--icons-color);
+    cursor: pointer;
+}
+.playBtn{
+    display: none;
+}
+.addToplaylistsaved{
+    background-color: rgb(4, 199, 59);
+    color: black;
+}
+/* ................................................. */
+@media(max-width: 580px){
+    .mobile_search_bar{
+        display: block;
+    }
+    .footer_desktop{
+        height: 10vh;
+        background-color: black;
+        grid-template-columns: 1fr;
+        grid-template-areas: "middle";
+        padding: 8px 0;
+    }
+    .footer_desktop_left_section{
+        display: none;
+    }
+    .footer_desktop_right_section{
+        display: none;
+    } 
+    .middle_section_first_row{
+        gap: 1rem;
+    }
+    .middle_section_second_row{
+    gap: 0.8rem;
+    width: clamp(160px,50vw,100%);
+    }
+}
+
+@media (min-width: 581px) and (max-width: 768px){
+    .mobile_search_bar{
+        display: block;
+    }
+    .footer_desktop{
+    height: 10vh;
+    background-color: rgba(107,104,104,0.4);
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "left middle";
+    }
+    .footer_desktop_left_section{
+        display: none;
+    }
+    .footer_desktop_right_section{
+        display: none;
+    } 
+    .middle_section_first_row{
+        gap: 1rem;
+    }
+    .middle_section_second_row{
+    gap: 0.8rem;
+    width: clamp(160px,50vw,100%);
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px){
+    .footer_desktop{
+    background-color: rgba(107,104,104,0.4);
+    height: 10vh;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "left middle";
+    z-index: 10000;
+    }
+    .footer_desktop_left_section img{
+    width: 80px;
+    height: 60px;
+    }
+    .footer_desktop_right_section{
+        display: none;
+    } 
+    .left_section_song_name p,
+    .left_section_song_name span{
+    width: clamp(160px,10vw,200px);
+    font-size: 0.9rem;
+    }
+    .middle_section_first_row{
+        gap: 1.8rem;
+    }
+    .middle_section_second_row{
+    gap: 0.8rem;
+    width: clamp(160px,50vw,100%);
+    }
+}
