@@ -36,3 +36,70 @@ A modern, responsive Spotify-inspired music web app built with HTML, CSS, and Ja
 - **LocalStorage** for playlist persistence
 
 ---
+## 📂 Project Structure
+
+```
+Real Spotify/
+│
+├── Assets/                # Images, icons, audio files
+├── datas/
+│   └── folders.json       # Music folders and song data
+
+___ Screenshots
+
+├── style/
+│   ├── normalise.css
+│   ├── header.css
+│   ├── footer.css
+│   └── mainpage/
+│       ├── leftsection.css
+│       ├── main.css
+│       └── rightsection.css
+├── scripts/
+│   ├── sidebar.js
+│   ├── folder.js
+│   └── slider-cards.js
+├── main.js
+├── main.html
+└── README.md
+```
+
+---
+## 🏁 Getting Started
+
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/YOUR-USERNAME/real-spotify-clone.git
+   ```
+2. **Open `main.html` in your browser.**
+3. **Enjoy the app!**
+
+---
+
+## 💡 How It Works
+
+- **Music Data:** All folders and songs are loaded from `folders.json`.
+- **UI Rendering:** JavaScript dynamically renders folders, carousels, and song details.
+- **Audio Controls:** Play/pause/seek/queue handled via JS and HTML `<audio>`.
+- **Playlist:** Songs can be liked/unliked and saved to localStorage.
+- **Search:** Type in the search bar to filter and play songs instantly.
+
+---
+
+## ✨ Credits
+
+- **Developed by:** [ Athul PD ](https://www.linkedin.com/in/YOUR-LINKEDIN/)
+- **Inspired by:** Spotify UI/UX
+
+---
+
+## 📢 License
+
+This project is for educational and portfolio purposes only.
+
+---
+
+## 📬 Contact
+
+Want to connect or collaborate?  
+Find me on [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN/) or [GitHub](https://github.com/YOUR-USERNAME).
